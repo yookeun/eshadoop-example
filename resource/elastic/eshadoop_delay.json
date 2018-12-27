@@ -1,0 +1,23 @@
+## 매핑
+PUT /eshadoop_delay/
+{
+  "mappings": {
+    "_doc": {
+      "properties": {
+      	"delayType": {
+      		"type": "keyword"
+      	},
+        "yearMonth": {
+          "type": "date",
+          "format": "yyyyMM"
+        },
+        "count": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
+
+##조회 
+GET /eshadoop_delay/_search
