@@ -50,6 +50,8 @@ public class DelayCounterMain extends Configured implements Tool {
         job.setJarByClass(DelayCounterMain.class);
         //매퍼 클래스 설정
         job.setMapperClass(DelayCountMapper.class);
+        //컨바이너 클래스적용
+        job.setCombinerClass(DelayCountReducer.class);
         //리듀서 클래스 설정
         job.setReducerClass(DelayCountReducer.class);
         //입출력 데이터 포멧

@@ -43,6 +43,9 @@ public class DelayCounterElasticMain extends Configured implements Tool {
         // 잡클래스설정
         job.setJarByClass(DelayCounterElasticMain.class);
 
+        //컨바이너적용
+        job.setCombinerClass(DelayCountReducerToElastic.class);   
+        
         // 맵클래스설정(기존 그대로)
         job.setMapperClass(DelayCountMapper.class);
 
